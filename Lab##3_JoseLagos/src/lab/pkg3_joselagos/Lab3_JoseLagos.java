@@ -22,6 +22,7 @@ public class Lab3_JoseLagos {
      */
     public static void main(String[] args) {
         int mapa = 120;
+        int enem = 15;
         int d1 = 0;
         String s1 = "";
         Personaje per = new Personaje();
@@ -70,7 +71,7 @@ public class Lab3_JoseLagos {
                     per.setColor_pelo(entrada.nextLine());
                     while (!per.color_pelo.equals("negro") && !per.color_pelo.equals("cafe") && !per.color_pelo.equals("rubio")) {
                         System.out.println("No se puede ese color");
-                        System.out.println("Ingrese un color valido (negro/cafe/rubio");
+                        System.out.println("Ingrese un color valido (negro/cafe/rubio)");
                         entrada = new Scanner(System.in);
                         per.setColor_pelo(entrada.nextLine());
                     }
@@ -114,7 +115,7 @@ public class Lab3_JoseLagos {
                     System.out.println(per);
                     System.out.println("Ahorita empieza su partida:");
                     int a = 0;
-                    while (a <= mapa || per.getHp() > 0) {
+                    while (a <= mapa && per.getHp() > 0) {
                         int dice_move = 1 + r.nextInt(20);
                         a = a + dice_move;
                         System.out.println("se movera: " + a);
@@ -124,7 +125,10 @@ public class Lab3_JoseLagos {
                         }
                         if (dice_luck >= 95) {
                             System.out.println("Roll dice again");
-                        } else {
+                        }
+ 
+                            else {
+                            if(enem>0){
                             System.out.println("Preparse para la  batalla");
                             int dice_enemy = 1 + r.nextInt(4);
                             switch (dice_enemy) {
@@ -213,7 +217,12 @@ public class Lab3_JoseLagos {
                                     }
                                 }
                             }
+                            }else{
+                                System.out.println("Se acabaron los enemigos");
+                            }
+                            enem--;
                         }
+                        
                     }
                     if (per.getHp() > 0) {
                         System.out.println("USTED A GANADO");
@@ -228,19 +237,23 @@ public class Lab3_JoseLagos {
                     System.out.println("2.Medio");
                     System.out.println("3.Dificil");
                     int dif = entrada.nextInt();
-                    switch (dif){
+                    switch (dif) {
                         case 1:
                             mapa = 50;
+                            enem=5;
                             break;
                         case 2:
                             mapa = 100;
+                            enem=10;
                             break;
                         case 3:
                             mapa = 120;
+                            enem=15;
                             break;
                         default:
                             System.out.println("por no seguir instrucciones modo super dificil");
                             mapa = 200;
+                            enem=50;
                             break;
                     }
                     break;
