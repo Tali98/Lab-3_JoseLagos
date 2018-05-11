@@ -15,7 +15,11 @@ public class Lab3_JoseLagos {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        System.out.println("MENU DE D&D");
+        System.out.println("1.Iniciar");
+        System.out.println("2.Nivel de Dificultad");
+        System.out.println("3.Salir");
+        
     }
     
 }
