@@ -5,6 +5,7 @@
  */
 package lab.pkg3_joselagos;
 
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -13,15 +14,18 @@ import java.util.Scanner;
  */
 public class Lab3_JoseLagos {
 
+    static Random r = new Random();
     static Scanner entrada = new Scanner(System.in);
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int d1=0;
-        String s1="";
+        int mapa = 120;
+        int d1 = 0;
+        String s1 = "";
         Personaje per = new Personaje();
+        Enemigo en = new Enemigo();
         System.out.println("MENU DE D&D");
         System.out.println("1.Iniciar");
         System.out.println("2.Nivel de Dificultad");
@@ -37,16 +41,16 @@ public class Lab3_JoseLagos {
                 int clase = entrada.nextInt();
                 switch (clase) {
                     case 1:
-                        per = new Mago(d1, d1, d1, d1, d1, d1, d1,s1 , s1, d1, d1, s1, s1, s1, d1);
+                        per = new Mago(d1, d1, d1, d1, d1, d1, d1, s1, s1, d1, d1, s1, s1, s1, d1);
                         break;
                     case 2:
-                        per = new Arquero(d1, d1, d1, d1, d1, d1, d1,s1 , s1, d1, d1, s1, s1, s1, d1);
+                        per = new Arquero(d1, d1, d1, d1, d1, d1, d1, s1, s1, d1, d1, s1, s1, s1, d1);
                         break;
                     case 3:
-                        per = new Berzerk(d1, d1, d1, d1, d1, d1, d1,s1 , s1, d1, d1, s1, s1, s1, d1);
+                        per = new Berzerk(d1, d1, d1, d1, d1, d1, d1, s1, s1, d1, d1, s1, s1, s1, d1);
                         break;
                     case 4:
-                        per = new Picaro(d1, d1, d1, d1, d1, d1, d1,s1 , s1, d1, d1, s1, s1, s1, d1);
+                        per = new Picaro(d1, d1, d1, d1, d1, d1, d1, s1, s1, d1, d1, s1, s1, s1, d1);
                         break;
                     default:
                         System.out.println("Por no obedecer sera un Picaro");
@@ -68,7 +72,7 @@ public class Lab3_JoseLagos {
                     per.setColor_pelo(entrada.nextLine());
                 }
                 System.out.println("Elija su raza");
-                int race = 1;
+                int race = 5;
                 while (race != 1 && race != 2 && race != 3 && race != 4) {
                     System.out.println("1.Hobbit");
                     System.out.println("2.Elfo");
@@ -105,6 +109,14 @@ public class Lab3_JoseLagos {
                 per.setPeso(entrada.nextInt());
                 entrada = new Scanner(System.in);
                 System.out.println(per);
+                System.out.println("Ahorita empieza su partida:");
+                int a=0;
+                while (a<=mapa) {
+                    int dice_move = 1+r.nextInt(20);
+                    System.out.println("se movera: "+a);
+                    
+                    
+                }
 
                 break;
         }

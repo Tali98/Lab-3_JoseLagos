@@ -19,7 +19,7 @@ Random r = new Random();
     }
 
     public Bruja(int hp, int ap, int ad, int eficacia, int pdc, int velocidad, String grito, String nombre, int estatura, int peso, int edad) {
-        super(hp, ap, ad, eficacia, pdc, velocidad, "FREEZE", "Bruja", estatura, peso, edad);
+        super(hp, ap, ad, eficacia, pdc, velocidad, "FREEZE", "Bruja", 160, 100, 100000);
         this.setHp(60+r.nextInt(80));
         this.setAp(20+r.nextInt(40));
         this.setAd(5+r.nextInt(10));
