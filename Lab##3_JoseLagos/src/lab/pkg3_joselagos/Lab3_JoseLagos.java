@@ -32,7 +32,7 @@ public class Lab3_JoseLagos {
         System.out.println("3.Salir");
         int menu = entrada.nextInt();
         int resp = menu;
-        while (resp == 1 && resp == 2) {
+        while (resp == 1 || resp == 2) {
             switch (menu) {
                 case 1:
                     System.out.println("Elija la clase de su personaje:");
